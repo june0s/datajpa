@@ -1,0 +1,27 @@
+spring:
+  database:
+    url: jdbc:h2:tcp://localhost/~/datajpa
+    username: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hiberences:
+      ddl-auto: update
+    properties:
+      hibernate:
+        # sql 컨솔 출력 옵션
+#        show_sql: true
+        format_sql: true
+
+  data:
+    web:
+      # default page size 변경
+      pageable:
+        default-page-size: 10
+        max-page-size: 100
+        one-indexed-parameters: true # index 를 1부터 시작하고 싶다.
+
+logging.level:
+  # sql 로그파일로 남기는 옵션
+  org.hibernate.SQL: debug
